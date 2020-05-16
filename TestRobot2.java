@@ -1,7 +1,7 @@
 package EM;
 import robocode.*;
 import java.awt.Color;
-import java.Math;
+import java.lang.Math;
 
 // API help : https://robocode.sourceforge.io/docs/robocode/robocode/Robot.html
 
@@ -34,7 +34,7 @@ public class TestRobot2 extends Robot
 		while(true) {
 			// Replace the next 4 lines with any behavior you would like
 			turnRadarRight(360);
-			turnRadarLeft(360);
+			//turnRadarLeft(360);
       //movement
       turnLeft(Math.random()*360);
       back(50);
@@ -58,9 +58,16 @@ public class TestRobot2 extends Robot
       turnGunLeft(whereTheHecc);
     }
 
-  //if xPrevE ==  && yPrevE == && &&
+    if (e.getDistance() < 50 && getEnergy() > 50) {
+      fire(3);
+    } // otherwise, fire 1.
+    else {
+      fire(1);
+    }
+    // Call scan again, before we turn the gun
+    scan();
 
-    fire(1);
+  //if xPrevE ==  && yPrevE == && &&
 
     //xPrevE = e.getDistance()*Math.cos(Math.toRadians(e.getBearing() + this.getHeading()));
     //yPrevE = e.getDistance()*Math.sin(Math.toRadians(e.getBearing() + this.getHeading()));

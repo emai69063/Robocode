@@ -31,7 +31,7 @@ public class GrimGorMk1 extends AdvancedRobot
 			setAhead(199);
 			setTurnRight(100);
 			execute();
-			turnLeft(180);
+			
 			
 		}	
 	}		
